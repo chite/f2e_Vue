@@ -23,6 +23,7 @@ exportingInit(Highcharts); // 傳遞 extensions 來添加模組
 highchartsMoreInit(Highcharts);
 solidGaugeInit(Highcharts);
 Vue.use(HighchartsVue)  // 註冊成為全域物件
+
 const routes = [
   {
     path: '/',
@@ -43,7 +44,8 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  // base: process.env.BASE_URL,
+  base: "/f2e_Vue/dist/",
   routes
 })
 
