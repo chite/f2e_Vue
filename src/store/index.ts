@@ -41,7 +41,7 @@ class User extends VuexModule {
       detail:
         "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       step: 2,
-      cost: 0,
+      cost: 25,
       time: "2020/6/8"
     },
     {
@@ -50,7 +50,7 @@ class User extends VuexModule {
       detail:
         "psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       step: 2,
-      cost: 0,
+      cost: 25,
       time: "2020/5/27"
     },
     {

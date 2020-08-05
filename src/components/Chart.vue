@@ -86,7 +86,7 @@ export default class Chart extends Vue {
           formatter: function(): string {
             return (
               '<div style="text-align:center"><span style="font-size:4rem;color: #B3B3B9">' +
-              (this.y / 60).toString() +
+              Math.floor(this.y / 60).toString() +
               ":" +
               ("0" + (this.y % 60)).slice(-2) +
               "</span><div>"
@@ -139,7 +139,7 @@ export default class Chart extends Vue {
     }
     // 初始化數值
     this.chartOptions.series[0].data = this.points;
-    // eslint-disable-next-line
+     // eslint-disable-next-line
     document
       .querySelector(".highcharts-root path")!
       .setAttributeNS(null, "stroke-linejoin", "round");

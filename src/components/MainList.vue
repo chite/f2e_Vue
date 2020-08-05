@@ -3,7 +3,7 @@
     <nav class="part__top">
       <p class="part__title">Your finished lists</p>
       <p class="part__title part__title--s">
-        <router-link to="/list">more</router-link>
+        <router-link to="/list/finished">more</router-link>
       </p>
     </nav>
     <div class="c-box">
@@ -27,8 +27,10 @@
     </div>
 
     <nav class="part__top">
-      <p class="part__title">Others work lists</p>
-      <p class="part__title part__title--s">more</p>
+      <p class="part__title">Your unfinished lists</p>
+      <p class="part__title part__title--s">
+        <router-link to="/list/unfinished">more</router-link>
+      </p>
     </nav>
     <div class="c-box">
       <div

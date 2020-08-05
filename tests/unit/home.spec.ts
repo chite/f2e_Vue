@@ -60,7 +60,7 @@ describe("methods", () => {
   it("interFun, should minus 60", () => {
     const defaultVal = wrapper.vm.points;
     wrapper.vm.interFun();
-    expect(wrapper.vm.points).toEqual([defaultVal - 60]);
+    expect(wrapper.vm.points).toEqual([defaultVal - 1]);
   });
   it("checkProcess--1, should clear interval in pause status", () => {
     wrapper.vm.intervalId = setInterval(wrapper.vm.interFun, 1000);

@@ -5,7 +5,8 @@
         <font-awesome-icon icon="bars"></font-awesome-icon>
         <div :class="[barOpen ? 'nav__content--line' : '', 'nav__content']">
           <p><router-link to="/">Start Page</router-link></p>
-          <p><router-link to="/list">Finished List</router-link></p>
+          <p><router-link to="/list/finished">Finished List</router-link></p>
+          <p><router-link to="/list/unfinished">Unfinished List</router-link></p>
         </div>
       </span>
       <span @click="clickIcon('plusOpen', $data)" class="nav__box">
@@ -18,13 +19,13 @@
             <p>title</p>
             <input
               class="nav__input"
-              v-model="newData.title"
+              v-model="newData.name"
               @change.stop="inputData($event, 'input')"
             />
             <p>Detail</p>
             <textarea
               class="nav__area"
-              v-model="newData.content"
+              v-model="newData.detail"
               @change.stop="inputData($event, 'textarea')"
             ></textarea>
           </div>
@@ -47,8 +48,8 @@ export default class App extends Vue {
   private barOpen = false
   private plusOpen = false
   private newData = {
-    title: '',
-    content: '',
+    name: '',
+    detail: '',
   }
   // eslint-disable-next-line
   clickIcon(name: string, data: any): void {
@@ -56,9 +57,9 @@ export default class App extends Vue {
   }
   inputData(e: { target: HTMLInputElement }, data: string): void {
     if (data == 'input') {
-      this.newData.title = e.target.value
+      this.newData.name = e.target.value
     } else {
-      this.newData.content = e.target.value
+      this.newData.detail = e.target.value
     }
   }
   // eslint-disable-next-line
@@ -66,15 +67,15 @@ export default class App extends Vue {
     const sendData = {
       ...data.newData,
       step: 0,
-      cost: 25,
+      cost: 0,
       id: store.state.data[store.state.data.length - 1].id + 1,
       time: new Date().toLocaleDateString()
     }
     store.commit('setName', sendData)
 
     data.newData = {
-      title: '',
-      content: '',
+      name: '',
+      detail: '',
     }
     data.plusOpen = false
   }

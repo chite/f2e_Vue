@@ -30,7 +30,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/list',
+    path: '/list/:category',
     name: 'List',
     component: List
   },

@@ -77,7 +77,7 @@ export default class Home extends Vue {
   }
   interFun(): void {
     if (!this.checkProcess()) return;
-    this.points = [this.points[0] - 60];
+    this.points = [this.points[0] - 1];
   }
   checkProcess(): boolean {
     if (this.pause) {
