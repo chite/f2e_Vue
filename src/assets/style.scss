@@ -1,0 +1,350 @@
+$main: #feebb3;
+$background: #303237;
+$sub: #b3b3b9;
+
+@mixin pc-width() {
+  @media only screen and (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin hover {
+  &:hover {
+    cursor: pointer;
+    filter: brightness(0.8);
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  background: $background;
+  color: #fff;
+  font-family: "Microsoft Sans Serif";
+}
+.nav {
+  display: flex;
+  height: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  // overflow: hidden;
+  svg {
+    @include hover();
+    &:first-child {
+      font-size: 2.5rem;
+    }
+    &:last-child {
+      font-size: 1.5rem;
+    }
+  }
+  &__box {
+    position: relative;
+    &--actived {
+      color: $main;
+    }
+  }
+  &__content {
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    top: 110%;
+    min-width: 20rem;
+    min-height: 15rem;
+    background: rgba(23, 24, 30, 0.9);
+    padding: 1rem;
+    box-sizing: border-box;
+    z-index: 99;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    &--line {
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      // justify-content: space-around;
+      p {
+        @include hover();
+        margin: 0;
+        padding: 1rem 0.25rem;
+      }
+    }
+    &--box {
+      color: $sub;
+      font-size: 14px;
+      display: flex;
+      right: 0;
+    }
+    &--8 {
+      width: 66.66%;
+    }
+    &--4 {
+      width: 33.33%;
+    }
+  }
+  &__u {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  &__input,
+  &__area {
+    border: none;
+    background: #000;
+    color: #fff;
+    width: 100%;
+  }
+  &__area {
+    height: 8rem;
+  }
+  &__btn {
+    @include hover();
+    width: 4rem;
+    height: 1.5rem;
+    color: #000;
+    background: $main;
+    border: none;
+  }
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  height: calc(100vh - 7rem);
+  &__body {
+    &--4 {
+      width: 100%;
+      flex-basis: 100%;
+      @include pc-width() {
+        width: 41.6%;
+        flex-basis: 41.6%;
+      }
+    }
+    &--6 {
+      width: 100%;
+      flex-basis: 100%;
+      @include pc-width() {
+        width: 50%;
+        flex-basis: 50%;
+      }
+    }
+    &--8 {
+      width: 100%;
+      flex-basis: 100%;
+      @include pc-width() {
+        width: 58.3%;
+        flex-basis: 58.3%;
+      }
+    }
+  }
+  &__part {
+    justify-content: space-between;
+    &--two {
+      .box {
+        width: 100%;
+        flex-basis: 100%;
+        @include pc-width() {
+          width: 48%;
+          flex-basis: 48%;
+        }
+      }
+    }
+  }
+  &__addition {
+    color: $sub;
+    font-size: 20px;
+    &:hover {
+      @include hover();
+    }
+  }
+}
+.s-main {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.content {
+  width: 100%;
+  height: 60%;
+  position: relative;
+  text {
+    display: none;
+  }
+}
+.btn {
+  width: 3.25rem;
+  height: 3.25rem;
+  background: #fff;
+  color: $background;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  &__topCircle {
+    width: 1.75rem;
+    height: 0.75rem;
+    background: $background;
+    position: absolute;
+    top: -1%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%);
+    &::before {
+      content: "";
+      width: 0.5rem;
+      height: 1.25rem;
+      background: $sub;
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      border-radius: 30%;
+      transform: translate(-50%);
+    }
+  }
+  @include pc-width() {
+    width: 4.75rem;
+    height: 4.75rem;
+    top: 85%;
+    font-size: 2.5rem;
+    &__topCircle {
+      width: 2rem;
+      height: 1rem;
+    }
+  }
+}
+
+.part {
+  &__top {
+    color: $sub;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &__title {
+    @include hover();
+    font-size: 20px;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    &--s {
+      font-size: 14px;
+    }
+  }
+}
+.box {
+  display: flex;
+  justify-content: space-between;
+  background: #2d2e34;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 99%;
+  padding: 0.75rem 1rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  &--active{
+    @include hover();
+  }
+  &__section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.5rem;
+  }
+  &__num {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0.25rem 0;
+    text-align: center;
+    &--s {
+      font-size: 12px;
+    }
+  }
+  &__title {
+    font-size: 22px;
+    margin: 0.25rem 0;
+    &--s {
+      font-size: 16px;
+      color: $sub;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+  &__click {
+    @include hover();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 26px;
+    min-width: 10%;
+    outline: none;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+.border {
+  display: flex;
+  background: #2d2e34;
+  border-radius: 10px;
+  padding: 2rem 3rem 2rem 0;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  height: calc(100vh - 13rem);
+  &__body {
+    &--3 {
+      width: 25%;
+      flex-basis: 25%;
+    }
+    &--9 {
+      width: 75%;
+      flex-basis: 75%;
+    }
+  }
+  &__text {
+    margin: 0;
+    text-align: center;
+  }
+  &__num {
+    font-size: 100px;
+    margin: 0;
+  }
+  &__description {
+    box-sizing: border-box;
+    white-space: pre-line;
+    line-height: 24px;
+    font-size: 16px;
+    overflow: auto;
+    padding-right: 1rem;
+  }
+  ::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $main;
+    border-radius: 10px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.color--main {
+  color: $main;
+}
+.color--sub {
+  color: $sub;
+}
