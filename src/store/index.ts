@@ -28,7 +28,7 @@ class User extends VuexModule {
   public data: Array<DataType> = [
     {
       id: 0,
-      name: "Morning1",
+      name: "Do the homework",
       detail:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       step: 0,
@@ -37,7 +37,7 @@ class User extends VuexModule {
     },
     {
       id: 1,
-      name: "Morning2",
+      name: "Clean the house",
       detail:
         "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       step: 2,
@@ -46,7 +46,7 @@ class User extends VuexModule {
     },
     {
       id: 2,
-      name: "Morning3",
+      name: "Go jogging",
       detail:
         "psum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       step: 2,
@@ -55,7 +55,7 @@ class User extends VuexModule {
     },
     {
       id: 3,
-      name: "Morning4",
+      name: "Reading novels",
       detail:
         "Lorem adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       step: 0,
@@ -64,7 +64,7 @@ class User extends VuexModule {
     },
     {
       id: 4,
-      name: "Morning6",
+      name: "Take a nap",
       detail:
         "Aonsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       step: 0,
@@ -73,7 +73,7 @@ class User extends VuexModule {
     },
     {
       id: 5,
-      name: "Morning4",
+      name: "Watching TV",
       detail:
         "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       step: 0,

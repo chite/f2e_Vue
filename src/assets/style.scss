@@ -257,6 +257,9 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 0.5rem;
+    &:nth-child(2){
+      flex-grow: 1;
+    }
   }
   &__num {
     font-size: 40px;
